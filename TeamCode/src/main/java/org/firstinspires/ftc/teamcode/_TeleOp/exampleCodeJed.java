@@ -173,12 +173,12 @@ public class exampleCodeJed extends OpMode
         
         // Calculate angle from controller direction
         double controllerAngle = (Math.abs(driveX) + Math.abs(driveY)) < 0.8 ? 0 :
-                Math.toDegrees(Math.atan(driveX/driveY));
+                Math.toDegrees(Math.atan2(driveX, driveY));// check this angle
         // Transpose the rotation to foward = 0 and increasing right to positive 360
-        controllerAngle = controllerAngle + (
-                driveX > 0 && driveY > 0 ? 0 :
-                driveY < 0 ? 180 :
-                driveX < 0 ? 360 : 0);
+//        controllerAngle = controllerAngle + (
+//                driveX > 0 && driveY > 0 ? 0 :
+//                driveY < 0 ? 180 :
+//                driveX < 0 ? 360 : 0);
 
         // Add the direction rate
         if ((Math.abs(driveX) + Math.abs(driveY)) < 0.8){
